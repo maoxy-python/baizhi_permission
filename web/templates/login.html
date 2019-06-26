@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="请输入用户名"><br>
+        <input type="text" name="password" placeholder="请输入密码"><br>
+        <input type="submit" value="提交"><br>
+        <span style="color: #b92c28">{{ msg }}</span>
+    </form>
+</body>
+</html>
