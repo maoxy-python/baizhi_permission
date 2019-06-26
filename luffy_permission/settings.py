@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rbac.apps.RbacConfig',
     'web.apps.WebConfig',
+    'rbac.templatetags',
 ]
 
 MIDDLEWARE = [
@@ -47,7 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'web.md.permission_middle.CheckPermission'
+    'rbac.middleware.rbac.RbacMiddleware'
 ]
 
 ROOT_URLCONF = 'luffy_permission.urls'
@@ -164,3 +165,11 @@ FILE_UPLOAD_DIRECTORY_PERMISSIONS = None
 
 # 权限相关的配置
 PERMISSION_SESSION_KEY = 'BZEdu_permission_key'
+# 菜单的配置
+MENU_SESSION_KEY = 'BZEdu_menu_key'
+
+# 白名单配置
+VALID_URL_LIST = [
+    '/login/',
+    '/admin/.*',
+]
